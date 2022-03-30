@@ -4,6 +4,7 @@ import { InputText } from "../../components/Inputs"
 import { useNavigate } from "react-router-dom"
 import { Footer } from "../../components/Footer";
 import { Divisor } from "../../components/Divisor";
+var validator = require("email-validator");
 
 export default function Cadastro(props){
     const navigate = useNavigate();
@@ -30,6 +31,16 @@ export default function Cadastro(props){
             }, 3000)
         } if (username === "") {
             setMessageName("Este campo não pode ser vazio")
+            usernameInput.classList.remove("input-default")
+            usernameInput.classList.add("input-error");
+            setTimeout(() => {
+                usernameInput.classList.add("input-default")
+                usernameInput.classList.remove("input-error");
+                setMessageName("")
+            }, 3000)
+        }
+        else if (username.length > 0 && !validator.validate(username)){
+            setMessageName("O email está incorreto")
             usernameInput.classList.remove("input-default")
             usernameInput.classList.add("input-error");
             setTimeout(() => {
@@ -74,13 +85,13 @@ export default function Cadastro(props){
                     )}
                 </div>
                 <div>
-                    <InputText label="Username or Email" id="username"  onChange={setUsername}/>
+                    <InputText label="Email" id="username"  onChange={setUsername}/>
                     {messageName !== "" && (
                         <span className="message-error">{messageName}</span>
                     )}
                 </div>
                 <div>
-                    <InputText label="Password" type="password" id="password"  onChange={setPassword}/>
+                    <InputText label="Create Password" type="password" id="password"  onChange={setPassword}/>
                     {messagePassword !== "" && (
                         <span className="message-error">{messagePassword}</span>
                     )}
@@ -88,8 +99,8 @@ export default function Cadastro(props){
             </div>
             <ButtonLogin text="Sign Up" onClica={verifyLogin}/>
             <Divisor/>
-            <GoogleButton text="Sign Un with Google" />
-            <span className="text-cadastro">Já está no invision ? <span className="link-style" onClick={() => navigate("/")}>Crie uma conta</span></span>
+            <GoogleButton text="Sign Up with Google" />
+            <span className="text-cadastro">Já está no invision ? <span className="link-style" onClick={() => navigate("/")}>Entre</span></span>
 
             <Footer/>
         </div>
