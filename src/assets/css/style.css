@@ -1,0 +1,188 @@
+
+body{
+    overflow: none;
+}
+
+.container-two-columns{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+@media (max-width: 480px) {
+
+    .container-main-child{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .btn-google{
+        padding: 8px 20px !important;
+        font-size: 13px;
+        column-gap: 8px;
+    }
+    .greetings-label{
+        font-size: 15px;
+    }
+    .container-logo{
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1024px){
+    .container-two-columns{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1025px){
+    .carousel-container{
+        height: 100vh;
+    }
+
+    .carousel-container img{
+        height: 100vh;
+    }
+}
+
+
+
+.container-main-child{
+    display:grid;
+    row-gap: 0px;
+    padding: 40px 60px;
+    overflow-y: auto;
+}
+
+.logo-invision{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-logo{
+    display:grid;
+    justify-content: end;
+}
+
+.input-style{
+    background-color: transparent;
+    padding: 8px 0px;
+    border:none;
+    margin-bottom: 4px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.label-input{
+    color: gray;
+}
+
+.container-inputs{
+    display:grid;
+    row-gap: 4px;
+}
+
+.form-container{
+    display:grid;
+    row-gap: 16px;
+    padding: 0px 60px;
+    margin-bottom: 24px;
+}
+
+.btn-login{
+    background-color: #707070;
+    
+    padding: 12px 60px;
+    border: none;
+    border-radius: 500px;
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.greetings-label{
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    color: #707070;
+}
+
+.input-error{
+    border-bottom: 1px solid red;
+    
+}
+
+.input-default{
+    border-bottom: 1px solid #707070;
+    
+}
+
+.message-error{
+    color:red;
+}
+
+.btn-google{
+    background-color: white;
+    display:grid;
+    grid-template-columns: fit-content(100%) fit-content(100%);
+    column-gap: 12px;
+    align-items: center;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 500px;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px -7px #000000;
+    margin-top: 24px;
+}
+
+.link-style{
+    color: blue;
+    cursor: pointer;
+}
+
+.text-cadastro{
+    margin-top: 24px;
+    text-align: center;
+}
+
+.div-footer{
+    display: grid;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.div-footer span{
+    font-size: 14px;
+}
+
+.text-footer-bold{
+    font-weight: bold;
+}
+
+.text-footer{
+    color: #707070;
+}
+
+.area-linha{
+    display: grid;
+    grid-template-columns: 1fr fit-content(100%) 1fr;
+    align-items: center;
+    column-gap: 15px;
+    margin-top: 15px;
+    padding: 0px 60px;
+}
+
+.linha{
+    border-bottom: 1px solid #707070;
+}
+
+
+
